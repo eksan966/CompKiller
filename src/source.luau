@@ -880,7 +880,7 @@ Compkiller.Lucide = {
 	["lucide-lasso"] = "rbxassetid://10723424235",
 	["lucide-lasso-select"] = "rbxassetid://10723424058",
 	["lucide-laugh"] = "rbxassetid://10723424372",
-	["lucide-layers"] = "rbxassetid://107093152764827",
+	["lucide-layers"] = "rbxassetid://10723424505",
 	["lucide-layout"] = "rbxassetid://10723425376",
 	["lucide-layout-dashboard"] = "rbxassetid://10723424646",
 	["lucide-layout-grid"] = "rbxassetid://10723424838",
@@ -10307,7 +10307,7 @@ function Compkiller:Loader(IconId,Duration)
 	Icon.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Icon.Size = UDim2.new(0, 750, 0, 750)
 	Icon.ZIndex = 100
-	Icon.Image = IconId or Compkiller.Logo;
+	Icon.Image = IconId or "rbxassetid://10041559173";
 	Icon.ImageTransparency = 1
 
 	Vignette.Name = Compkiller:_RandomString()
@@ -10411,12 +10411,12 @@ function Compkiller.newNotify()
 
 	Compkiller.NOTIFY_CACHE = {
 		new = function(Notify: Notify) : NotifyPayback
-			Notify = Compkiller.__CONFIG(Notify, {
-				Icon = Compkiller.Logo,
-				Title = "Notification",
-				Content = "Content",
-				Duration = 3,
-			});
+		Notify = Compkiller.__CONFIG(Notify, {
+			Icon = "rbxassetid://10041559173",
+			Title = "Notification",
+			Content = "Content",
+			Duration = 3,
+		});
 
 			LayoutREF -= 5;
 
@@ -10468,7 +10468,7 @@ function Compkiller.newNotify()
 			CompLogo.Size = UDim2.new(0, 25, 0, 25)
 			CompLogo.ZIndex = 4
 
-			if string.find(Notify.Icon,'cache-ck-',1,true) then	
+			if string.find(Notify.Icon,'cache-ck-',1,true) or string.find(Notify.Icon,'rbxassetid://',1,true) then	
 				CompLogo.Image = Notify.Icon;
 			else
 				CompLogo.Image = Compkiller:_GetIcon(Notify.Icon);
